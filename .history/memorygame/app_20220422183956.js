@@ -77,8 +77,6 @@ function checkMatch() {
   console.log(cards);
   console.log("check for match!");
   if (optionOneId == optionTwoId) {
-    cards[optionOneId].setAttribute("src", "images/blank.png");
-    cards[optionTwoId].setAttribute("src", "images/blank.png");
     alert("You have clicked the same image!");
   }
   if (cardsChosen[0] == cardsChosen[1]) {
@@ -93,12 +91,10 @@ function checkMatch() {
     cards[optionTwoId].setAttribute("src", "images/blank.png");
     alert("Sorry try again!");
   }
-  resultDisplay.textContent = cardsWon.length;
   cardsChosen = [];
   cardsChosenIds = [];
 
   if (cardsWon.length == cardArray.length / 2) {
-    resultDisplay.innerHTML = "Congratultions you found them all!";
   }
 }
 

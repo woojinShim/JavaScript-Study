@@ -52,7 +52,6 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random());
 
 const gridDisplay = document.querySelector("#grid");
-const resultDisplay = document.querySelector("#result");
 let cardsChosen = [];
 let cardsChosenIds = [];
 const cardsWon = [];
@@ -77,8 +76,6 @@ function checkMatch() {
   console.log(cards);
   console.log("check for match!");
   if (optionOneId == optionTwoId) {
-    cards[optionOneId].setAttribute("src", "images/blank.png");
-    cards[optionTwoId].setAttribute("src", "images/blank.png");
     alert("You have clicked the same image!");
   }
   if (cardsChosen[0] == cardsChosen[1]) {
@@ -91,15 +88,9 @@ function checkMatch() {
   } else {
     cards[optionOneId].setAttribute("src", "images/blank.png");
     cards[optionTwoId].setAttribute("src", "images/blank.png");
-    alert("Sorry try again!");
   }
-  resultDisplay.textContent = cardsWon.length;
   cardsChosen = [];
   cardsChosenIds = [];
-
-  if (cardsWon.length == cardArray.length / 2) {
-    resultDisplay.innerHTML = "Congratultions you found them all!";
-  }
 }
 
 function flipCard() {
